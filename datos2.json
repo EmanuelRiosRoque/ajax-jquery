@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "Emanuel",
+        "apellido": "Rios Roque",
+        "edad": 20
+    },
+    {
+        "nombre": "Hector",
+        "apellido": "Hernandez",
+        "edad": 20
+    },
+    {
+        "nombre": "Sergio",
+        "apellido": "Eduardo",
+        "edad": 21
+    },
+    {
+        "nombre": "Maria",
+        "apellido": "Rios",
+        "edad": 24
+    }
+]
