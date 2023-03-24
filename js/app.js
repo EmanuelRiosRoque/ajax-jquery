@@ -83,19 +83,36 @@
 
 
 // Metdo ajax
-$(function () {
-    $("button").click(function () { 
-        $.ajax({
-            type: "GET",
-            url: "datos2.json",
-            dataType: "json",
-            success: function(data) {
-                console.log(data);
+// $(function () {
+//     $("button").click(function () { 
+//         $.ajax({
+//             type: "GET",
+//             url: "datos2.json",
+//             dataType: "json",
+//             success: function(data) {
+//                 console.log(data);
+//                 if ($("#info").is(":empty") ) {
+                    
+//                     $.each(data, function(index, obj){
+//                         $("#info").append(obj.nombre + " " + obj.apellido + "<br/>")
+//                     });
+//                 }
+//             },
+//             error: function(xhr, status, error) {
+//                 console.log(xhr);
+//                 console.log(status);
+//                 console.log(error);
+//             }
+//         });
+//     });
+// });
 
-                $.each(data, function(index, obj){
-                    $("#info").append(obj.nombre + " " + obj.apellido + "<br/>")
-                });
-            }
+
+$(function () {
+    $("button").click(function( ) {
+        var usuario = $("#nombre").val();
+        $.get("servidor.php", {nombre: usuario}, function (data) { 
+            $("#info").text(data );
         });
     });
 });
