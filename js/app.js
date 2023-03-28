@@ -108,11 +108,34 @@
 // });
 
 
+// $(function () {
+//     $("button").click(function () {
+//         var usuario = $("#nombre").val();
+//         $.get("servidor.php", {nombre: usuario}, function(respuesta) {
+//             $("#info").text(respuesta);
+//         });
+//     });
+// });
+
+
 $(function () {
-    $("button").click(function( ) {
-        var usuario = $("#nombre").val();
-        $.get("servidor.php", {nombre: usuario}, function (data) { 
-            $("#info").text(data );
+    $("input[type=submit]").click(function(e) {
+        e.preventDefault();
+
+        var nombre = $("#nombre").val()
+        var apellido = $("#apellido").val()
+         
+        $.post("servidor.php", {nombre: nombre, apellido: apellido}, function (respuesta) {
+            $("#info").text(respuesta)
+            
+        }).done(function() {
+            $("#msj").text("Ejecucion Exitosa")
+
+        }).fail(function () {
+            $("#msj").text("Ocurrio un error")
+        
+        }).always(function () {
+            console.log("Ejecucion Finalizada");
         });
     });
 });
